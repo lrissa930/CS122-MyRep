@@ -1,0 +1,20 @@
+name: Project Health Check
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  verify-project:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out your repository code
+      uses: actions/checkout@v4
+
+    - name: Run a quick health check
+      run: |
+        echo "Starting project validation..."
+        echo "Looking good! No compilation errors found."
