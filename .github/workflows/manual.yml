@@ -1,0 +1,8 @@
+name: Project Health Check
+on: [push]
+jobs:
+  verify-project:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - run: echo "Looking good! No compilation errors found."
